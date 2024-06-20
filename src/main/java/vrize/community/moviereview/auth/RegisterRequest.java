@@ -11,10 +11,7 @@ import vrize.community.moviereview.auth.user.Role;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegisterRequest {
-
-    private String firstname;
-    private String lastname;
-    private String email;
+    private String username;
     private String password;
     private Role role;
 }

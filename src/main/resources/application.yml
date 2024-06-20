@@ -2,15 +2,18 @@ spring:
   application:
     name: movie-review-backend
   datasource:
-    url: jdbc:postgresql://${DATABASE_URL}:${DATABASE_PORT}/${DATABASE_SCHEMA}
-    username: ${DATABASE_USERNAME}
-    password: ${DATABASE_PASSWORD}
+    url: jdbc:postgresql://${DATABASE_URL:localhost}:${DATABASE_PORT:5432}/${DATABASE_SCHEMA:postgres}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
   jpa:
-    driver-class-name: org.postgresql.Driver
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
     properties:
       hibernate:
-        ddl-auto: create
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 application:
   security:
     jwt:
