@@ -108,7 +108,7 @@ services:
       OTEL_LOGS_EXPORTER: "otlp"
 
     volumes:
-      - ./opentelemetry/opentelemetry-javaagent.jar:/workspace/opentelemetry/opentelemetry-javaagent.jar
+      - ./opentelemetry:/workspace/opentelemetry
     depends_on:
       - postgres
       - collector
