@@ -7,13 +7,20 @@ spring:
     password: ${DATABASE_PASSWORD:postgres}
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
     show-sql: false
     properties:
       hibernate:
         format_sql: true
+        default_schema: movie_review_schema
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true
+    locations: db/migration
+    schemas: movie_review_schema
+
+
 application:
   security:
     jwt:

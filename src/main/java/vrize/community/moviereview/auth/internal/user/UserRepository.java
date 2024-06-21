@@ -1,4 +1,4 @@
-package vrize.community.moviereview.auth.user;
+package vrize.community.moviereview.auth.internal.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

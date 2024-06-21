@@ -1,28 +1,24 @@
-package vrize.community.moviereview.auth.user;
+package vrize.community.moviereview.auth.internal.user;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UuidGenerator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import vrize.community.moviereview.auth.token.Token;
+import vrize.community.moviereview.auth.internal.token.Token;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table(name = "_user")
+@Table(name = "users")
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    @UuidGenerator(style = UuidGenerator.Style.TIME)
+    private UUID id;
     private String username;
     private String password;
 
