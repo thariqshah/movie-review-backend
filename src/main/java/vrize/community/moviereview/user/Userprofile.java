@@ -9,7 +9,7 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name = "user_info")
-public class UserInfo {
+public class Userprofile {
     @Id
     @GeneratedValue
     @Column(name = "id", columnDefinition = "UUID")
